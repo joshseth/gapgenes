@@ -80,7 +80,7 @@ int main(int argc, char *argv[]) {
 	qsort (threshold, 10, sizeof(int), compare_floats);
 	int i;
 	for (i = 0; i < 10; i++){
-		if (r[i] !=0 && exp_fitness[i] <= threshold[2]){
+		if (r[i] !=0 && exp_fitness[i] < threshold[2]){
 		remove(mut_genome[i+2]);
 		}
 	}
@@ -125,7 +125,7 @@ int main(int argc, char *argv[]) {
 	    	int r3 = rand()%2;
 	    	int r4 = rand()%2;
 
-		    for (cot = 0; cot < 3701; cot++){  /* gene 1 */
+		    for (cot = 0; cot < 3703; cot++){  /* gene 1 */
 		    	if (r1 == 1){
 		    		fprintf(newborn, "%c", textfile[cot]);
 		    	}
@@ -133,7 +133,7 @@ int main(int argc, char *argv[]) {
 		    		fprintf(newborn, "%c", textfile2[cot]);
 		    	}
 		    }
-		    for (cot = 3702; cot < 6237; cot++){ /* gene 2 */
+		    for (cot = 3703; cot < 6237; cot++){ /* gene 2 */
 		    	if (r2 == 1){
 		    		fprintf(newborn, "%c", textfile[cot]);
 		    	}
@@ -141,7 +141,7 @@ int main(int argc, char *argv[]) {
 		    		fprintf(newborn, "%c", textfile2[cot]);
 		    	}
 		    }
-		    for (cot = 6238; cot < 11779; cot++){ /* gene 3 */
+		    for (cot = 6237; cot < 11777; cot++){ /* gene 3 */
 		    	if (r3 == 1){
 		    		fprintf(newborn, "%c", textfile[cot]);
 		    	}
@@ -149,7 +149,7 @@ int main(int argc, char *argv[]) {
 		    		fprintf(newborn, "%c", textfile2[cot]);
 		    	}
 		    }
-		    for (cot = 11780; cot < 13791; cot++){ /* gene 4 */
+		    for (cot = 11777; cot < 13784; cot++){ /* gene 4 */
 		    	if (r4 == 1){
 		    		fprintf(newborn, "%c", textfile[cot]);
 		    	}
@@ -161,7 +161,7 @@ int main(int argc, char *argv[]) {
 	    
 
 
-
+return 0;
 }
 
 
