@@ -35,6 +35,7 @@ int main(int argc, char *argv[]) {
 
 	n = scandir (argv[1], &vent, NULL, alphasort); 
 	m = scandir (argv[2], &ent, NULL, alphasort);  
+	
 	char buffer[n][150000];
 	char mut_genome[n][15000];
 	int rms[10] = {0};
@@ -54,7 +55,8 @@ int main(int argc, char *argv[]) {
 			FILE *fp;
 			fp = fopen(buffer[cnt],"rt");
 			
-			fscanf (fp, "%d", &rms[cnt-2]);
+			fscanf (fp, "rms = %d", &rms[cnt-2]);
+			/* ^just edited, check */
 			printf ("%d\n", rms[cnt-2]);
 
 
@@ -87,7 +89,7 @@ int main(int argc, char *argv[]) {
 	int num_surv = scandir (argv[2], &surv, NULL, alphasort) - 2;
 	// printf ("%s %i\n", "number of survivors: ", num_surv );
 	
-/* START of RECOMBINATION */
+	/* START of RECOMBINATION */
 
 		char textfile[13791];
     	char textfile2[13791];
@@ -97,7 +99,7 @@ int main(int argc, char *argv[]) {
 
 		for (j = 0; j < 10; j++) {
 			FILE *newborn;
-			sprintf (newpath[j], "%s/%s-%d.%s", argv[3], "gen-1-seq",j, "txt");
+			sprintf (newpath[j], "%s/%s-%s-%d.%s", argv[3], argv[3], "seq", j, "txt");
 			newborn = fopen (newpath[j], "w");
 			
 			FILE *fr;
